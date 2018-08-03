@@ -24,5 +24,5 @@ Note the iOS and Android native applications cannot access the Application.Curre
 
 An important note is that the Xamarin forms pages when hosted in an iOS native app resolve as UIViewControllers and so are equivelent to native pages.
 
-The Xamarin.Forms Android implementation uses a single Anroid Activity for all pages and as such each Xamarin.Forms ContentPage resolves to an Android Fragment when used in a native app. This presents an issue as native android apps will typically use an Activity for each page rather than a fragment. I've adapted a NavigationService to support this but further deveolpment and testing will be required. Alternatively you could implement native Android pages as Fragments but this will be limiting especially if integrating platfrom activities.
+The Xamarin.Forms Android implementation uses a single Android Activity for all pages and as such each Xamarin.Forms ContentPage resolves to an Android Fragment when used in a native app. This presents an issue as native android apps will typically use an Activity for each page rather than a fragment. I've adapted a NavigationService to support this but further deveolpment and testing will be required. Alternatively you could implement native Android pages as Fragments but this will be limiting especially if integrating platfrom activities.
 
