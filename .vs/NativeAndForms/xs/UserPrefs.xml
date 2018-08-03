@@ -1,0 +1,15 @@
+﻿<Properties StartupConfiguration="{3A519BBF-2658-417A-93BF-4867B61B8C18}|Default">
+  <MonoDevelop.Ide.ItemProperties.NativeAndForms.Droid PreferredExecutionTarget="Android.Android_Accelerated_Oreo" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="NativeAndForms Status">
+    <Files>
+      <File FileName="NativeAndForms Status" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.JustForms.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.17EBEB30-7D02-4E81-A9FA-FEF1F6EC7BCA" />
+</Properties>
