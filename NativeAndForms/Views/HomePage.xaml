@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NativeAndForms.Views.HomePage"
+             Title="Home">
+ <ContentPage.Resources>
+        <ResourceDictionary>
+            <!--Page Level Resources: Compatibile with Xamarin Live Player -->
+            <Color x:Key="Primary">#2196F3</Color>
+            <Color x:Key="Accent">#96d1ff</Color>
+            <Color x:Key="LightTextColor">#999999</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <Grid BackgroundColor="{StaticResource Accent}"
+              Padding="10,10"
+              HorizontalOptions="Fill"
+              VerticalOptions="Fill">
+            <Grid.Margin>
+                <OnPlatform
+                    x:TypeArguments="Thickness"
+                    iOS="0,50,0,0"
+                    Android="0,0,0,0" />
+            </Grid.Margin>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0"
+                   Margin="0,20,0,0"
+                   Text="Xamarin.Forms Content Page"
+                   FontSize="18"
+                   FontAttributes="Bold"
+                   TextColor="White"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   HorizontalTextAlignment="Center"/>
+            <Label Grid.Row="1"
+                   Text="{Binding WelcomeTitle, Mode=OneWay}"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   TextColor="White"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center"/>
+            <Button Grid.Row="2"
+                    Margin="0,0,0,20"
+                    HorizontalOptions="Center"
+                    Text="Goto Dashboard"
+                    Command="{Binding NavigateCommand}"/>
+            
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
