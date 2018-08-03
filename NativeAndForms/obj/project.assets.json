@@ -396,11 +396,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/richardwoollcott/Projects/NativeAndForms/NativeAndForms/NativeAndForms.csproj",
+      "projectUniqueName": "/Users/richardwoollcott/Documents/GitHub/NativeAndForms/NativeAndForms/NativeAndForms.csproj",
       "projectName": "NativeAndForms",
-      "projectPath": "/Users/richardwoollcott/Projects/NativeAndForms/NativeAndForms/NativeAndForms.csproj",
+      "projectPath": "/Users/richardwoollcott/Documents/GitHub/NativeAndForms/NativeAndForms/NativeAndForms.csproj",
       "packagesPath": "/Users/richardwoollcott/.nuget/packages/",
-      "outputPath": "/Users/richardwoollcott/Projects/NativeAndForms/NativeAndForms/obj",
+      "outputPath": "/Users/richardwoollcott/Documents/GitHub/NativeAndForms/NativeAndForms/obj",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
