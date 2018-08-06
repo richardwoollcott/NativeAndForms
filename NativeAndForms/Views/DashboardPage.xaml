@@ -33,7 +33,6 @@
                    Text="Xamarin.Forms Content Page"
                    FontSize="18"
                    FontAttributes="Bold"
-                   TextColor="White"
                    HorizontalOptions="Center"
                    VerticalOptions="Center"
                    HorizontalTextAlignment="Center"/>

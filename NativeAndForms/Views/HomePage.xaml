@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:nativeandforms="clr-namespace:NativeAndForms.Renderers;assembly=NativeAndForms"
+             xmlns:renderers="clr-namespace:NativeAndForms.Renderers;assembly=NativeAndForms"
+             xmlns:views="clr-namespace:NativeAndForms.Views;assembly=NativeAndForms"
+             xmlns:app="clr-namespace:NativeAndForms;assembly=NativeAndForms"
              x:Class="NativeAndForms.Views.HomePage"
              Title="Home">
  <ContentPage.Resources>
@@ -10,6 +12,13 @@
             <Color x:Key="Primary">#2196F3</Color>
             <Color x:Key="Accent">#96d1ff</Color>
             <Color x:Key="LightTextColor">#999999</Color>
+
+            <ResourceDictionary.MergedDictionaries>
+                <views:SharedStyles />
+                <!-- Add as many as you want here -->
+                <!--<app:App />-->
+        </ResourceDictionary.MergedDictionaries>
+            
         </ResourceDictionary>
     </ContentPage.Resources>
 
@@ -35,7 +44,6 @@
                    Text="Xamarin.Forms Content Page"
                    FontSize="18"
                    FontAttributes="Bold"
-                   TextColor="White"
                    HorizontalOptions="Center"
                    VerticalOptions="Center"
                    HorizontalTextAlignment="Center"/>
@@ -47,7 +55,7 @@
                    VerticalOptions="Center"
                    HorizontalOptions="Center"
                    HorizontalTextAlignment="Center"/>
-            <nativeandforms:MyEntry Grid.Row="2"
+            <renderers:MyEntry Grid.Row="2"
                            Text="In Shared Code" />
             <Button Grid.Row="3"
                     Margin="0,0,0,20"
