@@ -26,3 +26,24 @@ An important note is that the Xamarin forms pages when hosted in an iOS native a
 
 The Xamarin.Forms Android implementation uses a single Android Activity for all pages and as such each Xamarin.Forms ContentPage resolves to an Android Fragment when used in a native app. This presents an issue as native android apps will typically use an Activity for each page rather than a fragment. I've adapted a NavigationService to support this but further deveolpment and testing will be required. Alternatively you could implement native Android pages as Fragments but this will be limiting especially if integrating platfrom activities.
 
+Summary:-
+
+Xamarin.LiveReload works on the Xamarin.Forms apps only (JustForms.Droid & JustForms.iOS), not the native apps using Native Forms (NativeAndForms.Droid & NativeAndForms.iOS)
+
+Also Xamarin.LiveReload works on the PC Visual Studio 2017 only and is not yet available for the mac.
+
+You can use Merged Resource Dictionaries with Native forms but not the App.xaml so don't use this.
+
+Custom Renderers work ok using Native Forms with the Renderers in a Shared Project (so they work in both types of app).
+
+The Xamarin.Forms ContentPages and ViewModels can be used with Native forms without modification if a cross platfrom framework is used such as MVVMLight.
+
+The native views (Activity/UIViewController) can also bind to the view models using MVVMLight.
+
+A navigation service for iOS/Android/Xamarin.Forms is required using a common interface.
+
+
+
+
+
+
