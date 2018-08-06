@@ -22,7 +22,11 @@ namespace JustForms.Droid
             base.OnCreate(bundle);
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
+
             LoadApplication(new App());
+
+            //var reloader = new Reloader();
+            //reloader.Initialize();
         }
     }
 }

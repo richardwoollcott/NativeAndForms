@@ -14,6 +14,11 @@ namespace NativeAndForms
         {
             InitializeComponent();
 
+            // Initialize Live Reload.
+#if DEBUG
+            LiveReload.Init();
+#endif
+           
             // Configure and register the MVVM Light NavigationService
             var nav = new ViewNavigationService();
             SimpleIoc.Default.Register<IViewNavigationService>(() => nav);
