@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using NativeAndForms.Navigation;
 using Xamarin.Forms;
 
-namespace NativeAndForms.Views
+namespace NativeAndForms.Navigation
 {
     // Based on https://mallibone.com/post/a-simple-navigation-service-for-xamarinforms?mode=edit
 
