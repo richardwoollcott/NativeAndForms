@@ -12,6 +12,7 @@
     <Folder Include="ViewModel\" />
     <Folder Include="Views\" />
     <Folder Include="Navigation\" />
+    <Folder Include="Renderers\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Class1.cs" />

@@ -1,15 +1,22 @@
-﻿<Properties StartupConfiguration="{3A519BBF-2658-417A-93BF-4867B61B8C18}|Default">
-  <MonoDevelop.Ide.ItemProperties.NativeAndForms.Droid PreferredExecutionTarget="Android.Android_Accelerated_Oreo" />
+﻿<Properties StartupConfiguration="{15CF76FB-5E17-45B8-8C98-8C46C88486D1}|Default">
+  <MonoDevelop.Ide.ItemProperties.NativeAndForms.Droid PreferredExecutionTarget="Android.Android_Accelerated_Oreo" AndroidDesignerPreferredTheme="Theme.DeviceDefault.NoActionBar.Fullscreen" />
   <MonoDevelop.Ide.Workbench ActiveDocument="NativeAndForms Status">
     <Files>
+      <File FileName="FormsShared/EntryRenderer_iOS.cs" Line="24" Column="6" />
+      <File FileName="FormsShared/EntryRenderer_Droid.cs" Line="20" Column="38" />
+      <File FileName="NativeAndForms/Renderers/MyEntry.cs" Line="3" Column="35" />
+      <File FileName="NativeAndForms/Views/HomePage.xaml" Line="50" Column="36" />
       <File FileName="NativeAndForms Status" />
     </Files>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.NativeAndForms.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.120D6A58-FDBD-4F23-AC4C-18899E6A1B85" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.JustForms.Android PreferredExecutionTarget="Android.Android_Accelerated_Oreo" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.FormsShared FirstBuild="True" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.JustForms.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.17EBEB30-7D02-4E81-A9FA-FEF1F6EC7BCA" />
+  <MonoDevelop.Ide.ItemProperties.JustForms.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.120D6A58-FDBD-4F23-AC4C-18899E6A1B85" />
 </Properties>

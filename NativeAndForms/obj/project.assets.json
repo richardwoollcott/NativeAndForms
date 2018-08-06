@@ -390,32 +390,29 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Richard\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "/Users/richardwoollcott/.nuget/packages/": {},
+    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\GitHub\\NativeAndForms\\NativeAndForms\\NativeAndForms.csproj",
+      "projectUniqueName": "/Users/richardwoollcott/Documents/GitHub/NativeAndForms/NativeAndForms/NativeAndForms.csproj",
       "projectName": "NativeAndForms",
-      "projectPath": "C:\\GitHub\\NativeAndForms\\NativeAndForms\\NativeAndForms.csproj",
-      "packagesPath": "C:\\Users\\Richard\\.nuget\\packages\\",
-      "outputPath": "C:\\GitHub\\NativeAndForms\\NativeAndForms\\obj\\",
+      "projectPath": "/Users/richardwoollcott/Documents/GitHub/NativeAndForms/NativeAndForms/NativeAndForms.csproj",
+      "packagesPath": "/Users/richardwoollcott/.nuget/packages/",
+      "outputPath": "/Users/richardwoollcott/Documents/GitHub/NativeAndForms/NativeAndForms/obj",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Richard\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/richardwoollcott/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netstandard2.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {},
-        "https://nugetized.blob.core.windows.net/live-reload/index.json": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netstandard2.0": {
@@ -431,19 +428,19 @@
     "frameworks": {
       "netstandard2.0": {
         "dependencies": {
-          "MvvmLightLibsStd10": {
-            "target": "Package",
-            "version": "[5.4.1, )"
-          },
           "NETStandard.Library": {
             "suppressParent": "All",
             "target": "Package",
-            "version": "[2.0.3, )",
+            "version": "2.0.3",
             "autoReferenced": true
+          },
+          "MvvmLightLibsStd10": {
+            "target": "Package",
+            "version": "5.4.1"
           },
           "Xamarin.Forms": {
             "target": "Package",
-            "version": "[3.1.0.637273, )"
+            "version": "3.1.0.637273"
           }
         },
         "imports": [

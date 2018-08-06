@@ -151,6 +151,7 @@
       <Version>3.1.0.697729</Version>
     </PackageReference>
   </ItemGroup>
+  <Import Project="..\FormsShared\FormsShared.projitems" Label="Shared" Condition="Exists('..\FormsShared\FormsShared.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <ProjectReference Include="..\NativeAndForms\NativeAndForms.csproj">

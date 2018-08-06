@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:nativeandforms="clr-namespace:NativeAndForms.Renderers;assembly=NativeAndForms"
              x:Class="NativeAndForms.Views.HomePage"
              Title="Home">
  <ContentPage.Resources>
@@ -27,6 +28,7 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <Label Grid.Row="0"
                    Margin="0,20,0,0"
@@ -45,7 +47,9 @@
                    VerticalOptions="Center"
                    HorizontalOptions="Center"
                    HorizontalTextAlignment="Center"/>
-            <Button Grid.Row="2"
+            <nativeandforms:MyEntry Grid.Row="2"
+                           Text="In Shared Code" />
+            <Button Grid.Row="3"
                     Margin="0,0,0,20"
                     HorizontalOptions="Center"
                     Text="Goto Dashboard"

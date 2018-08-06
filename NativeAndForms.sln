@@ -6,11 +6,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NativeAndForms.Droid", "Dro
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NativeAndForms.iOS", "iOS\NativeAndForms.iOS.csproj", "{D5EC3B4C-1FAF-4F1B-899A-68D2F65FAAE9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NativeAndForms", "NativeAndForms\NativeAndForms.csproj", "{A688B017-50C5-4F09-9ADE-04F23C0857F3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NativeAndForms", "NativeAndForms\NativeAndForms.csproj", "{A688B017-50C5-4F09-9ADE-04F23C0857F3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JustForms.iOS", "JustForms.iOS\JustForms.iOS.csproj", "{3A519BBF-2658-417A-93BF-4867B61B8C18}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JustForms.Android", "JustForms.Android\JustForms.Android.csproj", "{EB9F5B55-55E6-499B-B461-1E9548B26759}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "FormsShared", "FormsShared\FormsShared.shproj", "{D4401EDA-5784-4BC2-AE6E-845321785E0A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
