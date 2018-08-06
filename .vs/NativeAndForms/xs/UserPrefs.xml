@@ -5,7 +5,11 @@
       <File FileName="FormsShared/EntryRenderer_iOS.cs" Line="24" Column="6" />
       <File FileName="FormsShared/EntryRenderer_Droid.cs" Line="20" Column="38" />
       <File FileName="NativeAndForms/Renderers/MyEntry.cs" Line="3" Column="35" />
-      <File FileName="NativeAndForms/Views/HomePage.xaml" Line="50" Column="36" />
+      <File FileName="NativeAndForms/Views/HomePage.xaml" Line="61" Column="1" />
+      <File FileName="Droid/NativeActivity.cs" Line="1" Column="1" />
+      <File FileName="iOS/NativePageViewController.cs" Line="1" Column="1" />
+      <File FileName="NativeAndForms/Navigation/ViewNavigationService.cs" Line="13" Column="39" />
+      <File FileName="NativeAndForms/App.xaml.cs" Line="5" Column="21" />
       <File FileName="NativeAndForms Status" />
     </Files>
   </MonoDevelop.Ide.Workbench>
