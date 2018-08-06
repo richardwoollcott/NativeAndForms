@@ -29,6 +29,7 @@ C:/GitHub/NativeAndForms/NativeAndForms/obj/Debug/netstandard2.0/NativeAndForms.
 /Users/richardwoollcott/Documents/GitHub/NativeAndForms/NativeAndForms/obj/Debug/netstandard2.0/App.xaml.g.cs
 /Users/richardwoollcott/Documents/GitHub/NativeAndForms/NativeAndForms/obj/Debug/netstandard2.0/Views/DashboardPage.xaml.g.cs
 /Users/richardwoollcott/Documents/GitHub/NativeAndForms/NativeAndForms/obj/Debug/netstandard2.0/Views/HomePage.xaml.g.cs
+/Users/richardwoollcott/Documents/GitHub/NativeAndForms/NativeAndForms/obj/Debug/netstandard2.0/Views/SharedStyles.xaml.g.cs
 /Users/richardwoollcott/Documents/GitHub/NativeAndForms/NativeAndForms/obj/Debug/netstandard2.0/NativeAndForms.csproj.CoreCompileInputs.cache
 /Users/richardwoollcott/Documents/GitHub/NativeAndForms/NativeAndForms/obj/Debug/netstandard2.0/NativeAndForms.AssemblyInfoInputs.cache
 /Users/richardwoollcott/Documents/GitHub/NativeAndForms/NativeAndForms/obj/Debug/netstandard2.0/NativeAndForms.AssemblyInfo.cs

@@ -5,5 +5,10 @@
     <Application.Resources>
 
         <!--<Thickness x:Key="PageMargin">0</Thickness>-->
+
+        <Style TargetType="Label"> 
+        <Setter Property="TextColor" Value="Green" /> 
+    </Style>
+        
     </Application.Resources>
 </Application>
