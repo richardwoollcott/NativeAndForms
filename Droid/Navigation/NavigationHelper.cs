@@ -23,8 +23,6 @@ namespace NativeAndForms.Droid.Navigation
             if (CurrentActivity != null)
             {
                 CurrentActivity.Finish();
-
-                //CurrentActivity.OnBackPressed();
             }
         }
 

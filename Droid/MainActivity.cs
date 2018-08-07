@@ -1,10 +1,8 @@
 ﻿using Android.App;
-using Android.Widget;
 using Android.OS;
 using NativeAndForms.ViewModel;
 using System.Collections.Generic;
 using GalaSoft.MvvmLight.Helpers;
-using GalaSoft.MvvmLight.Views;
 using NativeAndForms.Droid.Navigation;
 using GalaSoft.MvvmLight.Ioc;
 using Android.Content;
@@ -20,12 +18,8 @@ namespace NativeAndForms.Droid
 
         bool initialised;
 
-        /*
-        protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
-        {
-            base.OnActivityResult(requestCode, resultCode, data);
-        }
-        */
+        // Keep track of bindings to avoid premature garbage collection
+        private readonly List<Binding> bindings = new List<Binding>();
 
         private readonly NavigationHelper navigationHelper = new NavigationHelper();
 
@@ -50,9 +44,6 @@ namespace NativeAndForms.Droid
 
             base.OnResume();
         }
-
-        // Keep track of bindings to avoid premature garbage collection
-        private readonly List<Binding> bindings = new List<Binding>();
 
         /// <summary>
         /// Gets a reference to the MainViewModel from the ViewModelLocator.

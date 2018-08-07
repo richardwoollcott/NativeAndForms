@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Android.App;
 using Android.Content;
-using GalaSoft.MvvmLight.Views;
 using NativeAndForms.Navigation;
 using Plugin.CurrentActivity;
 using Xamarin.Forms;
@@ -15,9 +14,6 @@ namespace NativeAndForms.Droid.Navigation
     /// Xamarin Android implementation of <see cref="IViewNavigationService"/>.
     /// This implementation can be used in Xamarin Android applications (not Xamarin Forms).
     /// </summary>
-    /// <remarks>For this navigation service to work properly, your Activities
-    /// should derive from the <see cref="ActivityBase"/> class.</remarks>
-    ////[ClassInfo(typeof(INavigationService))]
     public class AndroidNavigationService : IViewNavigationService
     {
         public const string MainPageKey = "Main";
@@ -40,12 +36,6 @@ namespace NativeAndForms.Droid.Navigation
 
         private readonly Stack<FragmentOrActivity> navigationStack = new Stack<FragmentOrActivity>();
 
-        // TODO temp
-        public void AddToStack(Activity activity)
-        {
-            navigationStack.Push(new FragmentOrActivity { Activity = activity });
-        }
-
         /// <summary>
         /// The key corresponding to the currently displayed page.
         /// </summary>
@@ -60,8 +50,6 @@ namespace NativeAndForms.Droid.Navigation
         /// <summary>
         /// Adds a key/page pair to the navigation service.
         /// </summary>
-        /// <remarks>For this navigation service to work properly, your Activities
-        /// should derive from the <see cref="ActivityBase"/> class.</remarks>
         /// <param name="key">The key that will be used later
         /// in the <see cref="NavigateTo(string)"/> or <see cref="NavigateTo(string, object)"/> methods.</param>
         /// <param name="activityType">The type of the activity (page) corresponding to the key.</param>
@@ -88,7 +76,7 @@ namespace NativeAndForms.Droid.Navigation
 
             navigationStack.Push(new FragmentOrActivity
             {
-                Activity = startActivity
+                IsActivity = true
             });
         }
 
@@ -156,8 +144,6 @@ namespace NativeAndForms.Droid.Navigation
         private void GoBack()
         {
             var popped = navigationStack.Pop();
-
-            var next = navigationStack.Peek();
 
             if (popped.IsActivity)
             {
@@ -278,34 +264,11 @@ namespace NativeAndForms.Droid.Navigation
 
                 CurrentView.Helper.CurrentActivity.StartActivity(intent);
 
-                /*
-                Action<Result, Intent> callback = (resultCode, intentData) =>
-                {
-                    navigationStack.Push(new FragmentOrActivity { Activity = CrossCurrentActivity.Current.Activity });
-                };
-                */
-
-                //CurrentView.Helper.CurrentActivity.StartActivityForResult(_pagesByKey[pageKey], OnActivityResult);
-
-                //navigationStack.Push(new FragmentOrActivity { Activity = CrossCurrentActivity.Current.Activity });
+                navigationStack.Push(new FragmentOrActivity { IsActivity = true });
 
                 CurrentView.Helper.NextPageKey = pageKey;
             }
         }
-
-        /*
-        private void OnActivityResult(int requestCode, Result resultCode, Intent data)
-        {
-            if (data != null)
-            {
-
-                if (resultCode == Result.Ok)
-                {
-                    navigationStack.Push(new FragmentOrActivity { Activity = CrossCurrentActivity.Current.Activity });
-                }
-            }
-        }
-        */
 
         public void NavigateToFragment(string pageKey, object parameter)
         {
@@ -325,18 +288,16 @@ namespace NativeAndForms.Droid.Navigation
                            .Replace(Resource.Id.fragment_frame_layout, targetFragment)
                            .Commit();
 
-                navigationStack.Push(new FragmentOrActivity { Fragment = targetFragment });
+                navigationStack.Push(new FragmentOrActivity { IsActivity = false });
                 
-                //CurrentView.Helper.NextPageKey = pageKey; //TODO check this
+                CurrentView.Helper.NextPageKey = pageKey; //TODO check this
             }
         }
 
         private class FragmentOrActivity
         {
-            public Activity Activity;
-            public Fragment Fragment;
-
-            public bool IsActivity => Activity != null;
+            public bool IsActivity { get; set; }
         }
+
     }
 }

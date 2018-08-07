@@ -1,27 +1,18 @@
 ﻿using Android.App;
 using Android.OS;
 using Android.Widget;
-using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Helpers;
 
 using System.Collections.Generic;
 
 using NativeAndForms.Droid.Navigation;
 using NativeAndForms.ViewModel;
-using NativeAndForms.Navigation;
 
 namespace NativeAndForms.Droid
 {
 	[Activity (Label = "Native Page")]			
     public class NativeActivity : Activity, INavigationView
 	{
-        /*
-        protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
-        {
-            base.OnActivityResult(requestCode, resultCode, data);
-        }
-        */
-
         private readonly NavigationHelper navigationHelper = new NavigationHelper();
 
         // Keep track of bindings to avoid premature garbage collection
@@ -46,12 +37,6 @@ namespace NativeAndForms.Droid
         protected override void OnResume()
         {
             Helper.OnResume(this);
-
-            //SetResult(Result.Ok);
-
-            // TODO temp
-            var navigationService = SimpleIoc.Default.GetInstance<IViewNavigationService>();
-            ((AndroidNavigationService)navigationService).AddToStack(this);
 
             base.OnResume();
         }

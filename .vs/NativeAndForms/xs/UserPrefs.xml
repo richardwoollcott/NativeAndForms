@@ -1,20 +1,15 @@
 ﻿<Properties StartupConfiguration="{15CF76FB-5E17-45B8-8C98-8C46C88486D1}|Default">
   <MonoDevelop.Ide.ItemProperties.NativeAndForms.Droid PreferredExecutionTarget="Android.Android_Accelerated_Oreo" AndroidDesignerPreferredTheme="Theme.DeviceDefault.NoActionBar.Fullscreen" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="NativeAndForms/Views/HomePage.xaml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="NativeAndForms Status">
     <Files>
-      <File FileName="FormsShared/EntryRenderer_iOS.cs" Line="24" Column="6" />
-      <File FileName="FormsShared/EntryRenderer_Droid.cs" Line="20" Column="38" />
-      <File FileName="NativeAndForms/Renderers/MyEntry.cs" Line="3" Column="35" />
-      <File FileName="NativeAndForms/Views/HomePage.xaml" Line="6" Column="78" />
-      <File FileName="Droid/NativeActivity.cs" Line="1" Column="1" />
-      <File FileName="iOS/NativePageViewController.cs" Line="1" Column="1" />
-      <File FileName="NativeAndForms/Navigation/ViewNavigationService.cs" Line="13" Column="39" />
-      <File FileName="NativeAndForms/App.xaml.cs" Line="33" Column="15" />
-      <File FileName="NativeAndForms/Views/SharedStyles.xaml" Line="8" Column="13" />
-      <File FileName="NativeAndForms/Views/SharedStyles.xaml.cs" Line="7" Column="59" />
-      <File FileName="NativeAndForms/App.xaml" Line="10" Column="50" />
-      <File FileName="NativeAndForms/Views/DashboardPage.xaml" Line="36" Column="20" />
-      <File FileName="Droid/Navigation/AndroidNavigationService.cs" Line="319" Column="1" />
+      <File FileName="Droid/MainActivity.cs" Line="47" Column="9" />
+      <File FileName="Droid/NativeActivity.cs" Line="14" Column="60" />
+      <File FileName="Droid/Navigation/AndroidNavigationService.cs" Line="147" Column="13" />
+      <File FileName="Droid/Navigation/INavigationView.cs" Line="1" Column="1" />
+      <File FileName="Droid/Navigation/NavigationHelper.cs" Line="25" Column="42" />
+      <File FileName="Droid/MainApplication.cs" Line="1" Column="1" />
+      <File FileName="Droid/App.cs" Line="1" Column="1" />
+      <File FileName="NativeAndForms Status" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.NativeAndForms.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.120D6A58-FDBD-4F23-AC4C-18899E6A1B85" />
