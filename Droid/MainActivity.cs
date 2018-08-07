@@ -5,8 +5,6 @@ using System.Collections.Generic;
 using GalaSoft.MvvmLight.Helpers;
 using NativeAndForms.Droid.Navigation;
 using GalaSoft.MvvmLight.Ioc;
-using Android.Content;
-using Android.Runtime;
 using NativeAndForms.Navigation;
 
 namespace NativeAndForms.Droid

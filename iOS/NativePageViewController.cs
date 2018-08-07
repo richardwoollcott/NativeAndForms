@@ -1,6 +1,3 @@
-using Foundation;
-using GalaSoft.MvvmLight.Ioc;
-using GalaSoft.MvvmLight.Views;
 using System.Collections.Generic;
 using GalaSoft.MvvmLight.Helpers;
 

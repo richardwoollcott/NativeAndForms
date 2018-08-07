@@ -33,7 +33,7 @@ namespace NativeAndForms.ViewModel
 
         /// <summary>
         /// Gets the NavigateCommand.
-        /// Goes to the second page, using the navigation service.
+        /// Goes to the native page, using the navigation service.
         /// Use the "mvvmr*" snippet group to create more such commands.
         /// </summary>
         ///

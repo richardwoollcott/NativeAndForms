@@ -3,7 +3,6 @@ using UIKit;
 
 using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Threading;
-using GalaSoft.MvvmLight.Views;
 
 using NativeAndForms.ViewModel;
 using NativeAndForms.iOS.Navigation;
@@ -53,16 +52,7 @@ namespace NativeAndForms.iOS
             // If not required for your application you can safely delete this method
 
             Forms.Init();
-             
-            /*
-            Window = new UIWindow(UIScreen.MainScreen.Bounds);
-
-            UINavigationBar.Appearance.SetTitleTextAttributes(new UITextAttributes
-            {
-                TextColor = UIColor.Black
-            });
-            */
-
+            
             SimpleIoc.Default.Register<ViewModelLocator>(() => Application.Locator);
 
             // Configure and register the MVVM Light NavigationService
@@ -74,11 +64,6 @@ namespace NativeAndForms.iOS
 
             _navigation = Window.RootViewController as UINavigationController;
 
-
-            //_navigation = new UINavigationController(mainPage);
-            //UIStoryboard Storyboard = UIStoryboard.FromName("Main", null);
-
-            //_navigation.Storyboard = Storyboard;
             Window.RootViewController = _navigation;
             Window.MakeKeyAndVisible();
 
@@ -86,10 +71,9 @@ namespace NativeAndForms.iOS
             DispatcherHelper.Initialize(application);
 
             nav.Initialize(_navigation);
-            //nav.Initialize((UINavigationController)Window.RootViewController);
+            
             nav.Configure(ViewModelLocator.NativePageKey, "NativePage");
-            //nav.Configure(ViewModelLocator.SecondPageKey, typeof(SecondViewController));
-                          
+                      
             nav.Configure(ViewModelLocator.HomePageKey, CreateHome);
             nav.Configure(ViewModelLocator.DashboardPageKey, CreateDashboard);
 

@@ -3,13 +3,11 @@ using System;
 using Android.App;
 using Android.OS;
 using Android.Runtime;
-using GalaSoft.MvvmLight.Ioc;
-using GalaSoft.MvvmLight.Views;
 using Plugin.CurrentActivity;
 
 namespace NativeAndForms
 {
-	//You can specify additional application information in this attribute
+    //You can specify additional application information in this attribute
     [Application]
     public class MainApplication : Application, Application.IActivityLifecycleCallbacks
     {

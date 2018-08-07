@@ -5,9 +5,7 @@ using System.Reflection;
 using System.Threading.Tasks;
 using GalaSoft.MvvmLight.Views;
 using NativeAndForms.Navigation;
-using NativeAndForms.ViewModel;
 using UIKit;
-using Xamarin.Forms;
 
 namespace NativeAndForms.iOS.Navigation
 {

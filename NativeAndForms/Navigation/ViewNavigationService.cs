@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
-using NativeAndForms.Navigation;
 using Xamarin.Forms;
 
 namespace NativeAndForms.Navigation
@@ -12,23 +11,22 @@ namespace NativeAndForms.Navigation
 
     public class ViewNavigationService : IViewNavigationService
     {
-        private readonly object _sync = new object();
-        private readonly Dictionary<string, Type> _pagesByKey = new Dictionary<string, Type>();
-        private readonly Stack<NavigationPage> _navigationPageStack =
-            new Stack<NavigationPage>();
-        private NavigationPage CurrentNavigationPage => _navigationPageStack.Peek();
+        private readonly object sync = new object();
+        private readonly Dictionary<string, Type> pagesByKey = new Dictionary<string, Type>();
+        private readonly Stack<NavigationPage> navigationPageStack = new Stack<NavigationPage>();
+        private NavigationPage CurrentNavigationPage => navigationPageStack.Peek();
 
         public void Configure(string pageKey, Type pageType)
         {
-            lock (_sync)
+            lock (sync)
             {
-                if (_pagesByKey.ContainsKey(pageKey))
+                if (pagesByKey.ContainsKey(pageKey))
                 {
-                    _pagesByKey[pageKey] = pageType;
+                    pagesByKey[pageKey] = pageType;
                 }
                 else
                 {
-                    _pagesByKey.Add(pageKey, pageType);
+                    pagesByKey.Add(pageKey, pageType);
                 }
             }
         }
@@ -36,9 +34,9 @@ namespace NativeAndForms.Navigation
         public Page SetRootPage(string rootPageKey)
         {
             var rootPage = GetPage(rootPageKey);
-            _navigationPageStack.Clear();
+            navigationPageStack.Clear();
             var mainPage = new NavigationPage(rootPage);
-            _navigationPageStack.Push(mainPage);
+            navigationPageStack.Push(mainPage);
             return mainPage;
         }
 
@@ -46,7 +44,7 @@ namespace NativeAndForms.Navigation
         {
             get
             {
-                lock (_sync)
+                lock (sync)
                 {
                     if (CurrentNavigationPage?.CurrentPage == null)
                     {
@@ -55,8 +53,8 @@ namespace NativeAndForms.Navigation
 
                     var pageType = CurrentNavigationPage.CurrentPage.GetType();
 
-                    return _pagesByKey.ContainsValue(pageType)
-                        ? _pagesByKey.First(p => p.Value == pageType).Key
+                    return pagesByKey.ContainsValue(pageType)
+                        ? pagesByKey.First(p => p.Value == pageType).Key
                         : null;
                 }
             }
@@ -71,9 +69,9 @@ namespace NativeAndForms.Navigation
                 return;
             }
 
-            if (_navigationPageStack.Count > 1)
+            if (navigationPageStack.Count > 1)
             {
-                _navigationPageStack.Pop();
+                navigationPageStack.Pop();
                 await CurrentNavigationPage.Navigation.PopModalAsync();
                 return;
             }
@@ -92,7 +90,7 @@ namespace NativeAndForms.Navigation
             NavigationPage.SetHasNavigationBar(page, false);
             var modalNavigationPage = new NavigationPage(page);
             await CurrentNavigationPage.Navigation.PushModalAsync(modalNavigationPage, animated);
-            _navigationPageStack.Push(modalNavigationPage);
+            navigationPageStack.Push(modalNavigationPage);
         }
 
         public async Task NavigateToAsync(string pageKey, bool animated = true)
@@ -109,15 +107,15 @@ namespace NativeAndForms.Navigation
         private Page GetPage(string pageKey, object parameter = null)
         {
 
-            lock (_sync)
+            lock (sync)
             {
-                if (!_pagesByKey.ContainsKey(pageKey))
+                if (!pagesByKey.ContainsKey(pageKey))
                 {
                     throw new ArgumentException(
                         $"No such page: {pageKey}. Did you forget to call NavigationService.Configure?");
                 }
 
-                var type = _pagesByKey[pageKey];
+                var type = pagesByKey[pageKey];
                 ConstructorInfo constructor;
                 object[] parameters;
 
