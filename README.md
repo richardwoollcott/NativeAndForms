@@ -17,9 +17,9 @@ The ViewModels DashboardViewModel and HomeViewModel and the ViewModelLocator are
 
 The IViewNavigationService interface is used across all platforms with the following implementations:-
 
-Xamarin.Forms - ViewNavigationService
-Android - AndroidNavigationService - further work maybe required on this one
-iOS - iOSNavigationService
+Xamarin.Forms - ViewNavigationService - based on https://mallibone.com/post/a-simple-navigation-service-for-xamarinforms?mode=edit
+Android - AndroidNavigationService - based on MVVMLight and modified to handle Activity and Fragments. Further testing required on this
+iOS - iOSNavigationService - stock MVVMLight implementation
 
 Note the iOS and Android native applications cannot access the Application.Current.Resources
 
@@ -33,7 +33,9 @@ Xamarin.LiveReload works on the Xamarin.Forms apps only (JustForms.Droid & JustF
 
 Also Xamarin.LiveReload works on the PC Visual Studio 2017 only and is not yet available for the mac.
 
-You can use Merged Resource Dictionaries with Native forms but not the App.xaml so don't use this.
+You can use Merged Resource Dictionaries with Native forms so shared styles can be used.
+
+Placing of styles etc in App.xaml is unsupported on the Xamarin native platfroms so don't use this.
 
 Custom Renderers work ok using Native Forms with the Renderers in a Shared Project (so they work in both types of app).
 
