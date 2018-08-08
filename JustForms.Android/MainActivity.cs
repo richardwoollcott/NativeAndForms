@@ -8,6 +8,7 @@ using Android.Widget;
 using Android.OS;
 
 using NativeAndForms;
+using FFImageLoading.Forms.Platform;
 
 namespace JustForms.Droid
 {
@@ -22,6 +23,9 @@ namespace JustForms.Droid
             base.OnCreate(bundle);
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
+
+            CachedImageRenderer.Init(true);
+
             LoadApplication(new App());
         }
     }

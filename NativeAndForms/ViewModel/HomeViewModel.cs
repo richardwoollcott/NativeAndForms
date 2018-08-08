@@ -20,6 +20,8 @@ namespace NativeAndForms.ViewModel
     {
         private string welcomeTitle;
 
+        private string imageFileName;
+
         private RelayCommand navigateCommand;
 
         private readonly IViewNavigationService navigationService;
@@ -32,6 +34,15 @@ namespace NativeAndForms.ViewModel
             this.navigationService = navigationService;
 
             WelcomeTitle = "Home Page";
+
+            //string ass = typeof(HomeViewModel).Assembly.FullName;
+
+            //ImageFileName = "resource://NativeAndFroms.Resources.delay.png?assembly=NativeAndForms";
+            ImageFileName = "resource://NativeAndFroms.Resources.delay.png";
+            
+            //SvgFileName = "NativeAndFroms.Resources.sample.svg";
+
+
         }
 
         public string WelcomeTitle
@@ -46,6 +57,18 @@ namespace NativeAndForms.ViewModel
             }
         }
 
+        public string ImageFileName
+        {
+            get
+            {
+                return imageFileName;
+            }
+            set
+            {
+                Set(ref imageFileName, value);
+            }
+        }
+
         /// <summary>
         /// Gets the NavigateCommand.
         /// Goes to the second page, using the navigation service.
@@ -53,7 +76,7 @@ namespace NativeAndForms.ViewModel
         /// </summary>
         ///
 
-		public RelayCommand NavigateCommand
+        public RelayCommand NavigateCommand
 		{
 			get
 			{

@@ -6,6 +6,7 @@ using GalaSoft.MvvmLight.Helpers;
 using NativeAndForms.Droid.Navigation;
 using GalaSoft.MvvmLight.Ioc;
 using NativeAndForms.Navigation;
+using FFImageLoading.Forms.Platform;
 
 namespace NativeAndForms.Droid
 {
@@ -62,6 +63,8 @@ namespace NativeAndForms.Droid
             SetContentView(Resource.Layout.Main);
 
             Xamarin.Forms.Forms.Init(this, savedInstanceState);
+
+            CachedImageRenderer.Init(true);
 
             //ensure the navigation service is configured
             // by accessing the Vm property which calls the App.Locator

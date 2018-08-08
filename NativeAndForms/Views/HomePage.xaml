@@ -3,7 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:renderers="clr-namespace:NativeAndForms.Renderers;assembly=NativeAndForms"
              xmlns:views="clr-namespace:NativeAndForms.Views;assembly=NativeAndForms"
+             
              xmlns:app="clr-namespace:NativeAndForms;assembly=NativeAndForms"
+             xmlns:forms="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+             xmlns:extensions="clr-namespace:NativeAndForms.Extensions"
+             xmlns:converters="clr-namespace:NativeAndForms.Converters"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              x:Class="NativeAndForms.Views.HomePage"
              Title="Home">
  <ContentPage.Resources>
@@ -13,6 +18,9 @@
             <Color x:Key="Accent">#96d1ff</Color>
             <Color x:Key="LightTextColor">#999999</Color>
 
+            <forms:SvgImageSourceConverter x:Key="SvgImageSourceConverter" />
+
+            <converters:EmbeddedImageSourceConverter x:Key="EmbeddedImageSourceConverter" />
             <ResourceDictionary.MergedDictionaries>
                 <views:SharedStyles />
                 <!-- Add as many as you want here -->
@@ -37,6 +45,7 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="65"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <Label Grid.Row="0"
@@ -57,7 +66,25 @@
                    HorizontalTextAlignment="Center"/>
             <renderers:MyEntry Grid.Row="2"
                            Text="In Shared Code" />
-            <Button Grid.Row="3"
+
+            <ffimageloading:CachedImage Grid.Row="3"
+                                        HorizontalOptions="Start"
+                                        VerticalOptions="Center" 
+                                        WidthRequest="100"
+                                        HeightRequest="100"
+                                        Aspect="AspectFit"
+                                        Source="resource://NativeAndForms.Resources.delay.png" />
+            <Image Grid.Row="3"
+                   HorizontalOptions="End" 
+                   VerticalOptions="Center"
+                   WidthRequest="100"
+                   HeightRequest="100"
+                   Source="{extensions:ImageResource NativeAndForms.Resources.delay.png}" />
+
+            <!--<Image Grid.Row="3"
+                   Source="{Binding ImageFileName, Converter={StaticResource EmbeddedImageSourceConverter}}" />-->
+            
+            <Button Grid.Row="4"
                     Margin="0,0,0,20"
                     HorizontalOptions="Center"
                     Text="Goto Dashboard"

@@ -20,4 +20,12 @@
   <ItemGroup>
     <Compile Remove="Class1.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <None Remove="Resources\delay.png" />
+    <None Remove="Resources\sample.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\delay.png" />
+    <EmbeddedResource Include="Resources\sample.svg" />
+  </ItemGroup>
 </Project>
