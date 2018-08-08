@@ -4,6 +4,7 @@ using UIKit;
 
 using NativeAndForms;
 using FFImageLoading.Forms.Platform;
+using FFImageLoading.Svg.Forms;
 
 namespace JustForms.iOS
 {
@@ -25,6 +26,8 @@ namespace JustForms.iOS
             global::Xamarin.Forms.Forms.Init();
 
             CachedImageRenderer.Init();
+
+            var ignore = typeof(SvgCachedImage);
 
             LoadApplication(new App());
 

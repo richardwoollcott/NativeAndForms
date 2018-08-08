@@ -10,6 +10,7 @@ using Xamarin.Forms;
 using NativeAndForms.Views;
 using NativeAndForms.Navigation;
 using FFImageLoading.Forms.Platform;
+using FFImageLoading.Svg.Forms;
 
 namespace NativeAndForms.iOS
 {
@@ -55,6 +56,8 @@ namespace NativeAndForms.iOS
             Forms.Init();
 
             CachedImageRenderer.Init();
+
+            var ignore = typeof(SvgCachedImage);
 
             SimpleIoc.Default.Register<ViewModelLocator>(() => Application.Locator);
 

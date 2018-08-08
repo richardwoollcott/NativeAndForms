@@ -1,6 +1,9 @@
+using FFImageLoading.Svg.Forms;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using NativeAndForms.Navigation;
+
+using System.Reflection;
 
 namespace NativeAndForms.ViewModel
 {
@@ -35,13 +38,17 @@ namespace NativeAndForms.ViewModel
 
             WelcomeTitle = "Home Page";
 
-            //string ass = typeof(HomeViewModel).Assembly.FullName;
-
-            //ImageFileName = "resource://NativeAndFroms.Resources.delay.png?assembly=NativeAndForms";
-            ImageFileName = "resource://NativeAndFroms.Resources.delay.png";
+            //ImageFileName = "resource://{NativeAndForms.Resources.camera.svg}?assembly={Uri.EscapeUriString(NativeAndForms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null)}";
             
-            //SvgFileName = "NativeAndFroms.Resources.sample.svg";
+            ImageFileName = "resource://NativeAndForms.Resources.camera.svg";
 
+            // ...
+            // use for debugging, not in released app code!
+            //var assembly = IntrospectionExtensions.GetTypeInfo(typeof(HomeViewModel)).Assembly;
+            //foreach (var res in assembly.GetManifestResourceNames())
+            //{
+            //    System.Diagnostics.Debug.WriteLine("found resource: " + res);
+            //}
 
         }
 

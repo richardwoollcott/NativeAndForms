@@ -9,6 +9,7 @@
              xmlns:extensions="clr-namespace:NativeAndForms.Extensions"
              xmlns:converters="clr-namespace:NativeAndForms.Converters"
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
              x:Class="NativeAndForms.Views.HomePage"
              Title="Home">
  <ContentPage.Resources>
@@ -20,7 +21,8 @@
 
             <forms:SvgImageSourceConverter x:Key="SvgImageSourceConverter" />
 
-            <converters:EmbeddedImageSourceConverter x:Key="EmbeddedImageSourceConverter" />
+            <converters:EmbeddedSvgImageSourceConverter x:Key="EmbeddedSvgImageSourceConverter" />
+            
             <ResourceDictionary.MergedDictionaries>
                 <views:SharedStyles />
                 <!-- Add as many as you want here -->
@@ -68,12 +70,40 @@
                            Text="In Shared Code" />
 
             <ffimageloading:CachedImage Grid.Row="3"
+                                        HorizontalOptions="Start" 
+                                        VerticalOptions="Center"
+                                        WidthRequest="100"
+                                        HeightRequest="100"
+                                        Source="{Binding ImageFileName, Converter={StaticResource EmbeddedSvgImageSourceConverter}}"/>
+
+            <!--<ffimageloading:CachedImage Grid.Row="3"
                                         HorizontalOptions="Start"
                                         VerticalOptions="Center" 
                                         WidthRequest="100"
                                         HeightRequest="100"
                                         Aspect="AspectFit"
-                                        Source="resource://NativeAndForms.Resources.delay.png" />
+                                        Source="resource://NativeAndForms.Resources.delay.png" />-->
+
+            <!-- doesn't work-->
+            <!--<Image Grid.Row="3"
+                   HorizontalOptions="Start" 
+                   VerticalOptions="Center"
+                   WidthRequest="100"
+                   HeightRequest="100"
+                   Source="{Binding ImageFileName, Converter={StaticResource EmbeddedSvgImageSourceConverter}}" />-->
+
+            
+
+            <!-- this doesn't work with native forms-->
+            <!--<ffimageloading:CachedImage Grid.Row="3"
+                                        HorizontalOptions="Start" 
+                                        VerticalOptions="Center"
+                                        WidthRequest="100"
+                                        HeightRequest="100"
+                                        Source="{Binding ImageFileName, Converter={StaticResource SvgImageSourceConverter}}"/>
+           -->
+
+
             <Image Grid.Row="3"
                    HorizontalOptions="End" 
                    VerticalOptions="Center"
@@ -81,15 +111,13 @@
                    HeightRequest="100"
                    Source="{extensions:ImageResource NativeAndForms.Resources.delay.png}" />
 
-            <!--<Image Grid.Row="3"
-                   Source="{Binding ImageFileName, Converter={StaticResource EmbeddedImageSourceConverter}}" />-->
-            
             <Button Grid.Row="4"
                     Margin="0,0,0,20"
                     HorizontalOptions="Center"
                     Text="Goto Dashboard"
                     Command="{Binding NavigateCommand}"/>
-            
         </Grid>
+
+
     </ContentPage.Content>
 </ContentPage>

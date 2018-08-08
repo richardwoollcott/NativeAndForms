@@ -19,12 +19,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Class1.cs" />
+    <Compile Remove="Converters\EmbeddedImageSourceConverter.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Remove="Resources\camera.svg" />
     <None Remove="Resources\delay.png" />
     <None Remove="Resources\sample.svg" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Resources\camera.svg" />
     <EmbeddedResource Include="Resources\delay.png" />
     <EmbeddedResource Include="Resources\sample.svg" />
   </ItemGroup>
