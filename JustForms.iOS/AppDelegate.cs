@@ -3,6 +3,8 @@ using Foundation;
 using UIKit;
 
 using NativeAndForms;
+using FFImageLoading.Forms.Platform;
+using FFImageLoading.Svg.Forms;
 
 namespace JustForms.iOS
 {
@@ -22,6 +24,11 @@ namespace JustForms.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
+
+            CachedImageRenderer.Init();
+
+            var ignore = typeof(SvgCachedImage);
+
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);

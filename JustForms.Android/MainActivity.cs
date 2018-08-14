@@ -8,6 +8,8 @@ using Android.Widget;
 using Android.OS;
 
 using NativeAndForms;
+using FFImageLoading.Forms.Platform;
+using FFImageLoading.Svg.Forms;
 
 namespace JustForms.Droid
 {
@@ -22,6 +24,12 @@ namespace JustForms.Droid
             base.OnCreate(bundle);
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
+
+            CachedImageRenderer.Init(true);
+
+            var ignore = typeof(SvgCachedImage);
+
+
             LoadApplication(new App());
         }
     }

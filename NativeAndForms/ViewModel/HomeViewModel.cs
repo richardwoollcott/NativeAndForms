@@ -1,6 +1,9 @@
+using FFImageLoading.Svg.Forms;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using NativeAndForms.Navigation;
+
+using System.Reflection;
 
 namespace NativeAndForms.ViewModel
 {
@@ -20,6 +23,8 @@ namespace NativeAndForms.ViewModel
     {
         private string welcomeTitle;
 
+        private string imageFileName;
+
         private RelayCommand navigateCommand;
 
         private readonly IViewNavigationService navigationService;
@@ -32,6 +37,19 @@ namespace NativeAndForms.ViewModel
             this.navigationService = navigationService;
 
             WelcomeTitle = "Home Page";
+
+            //ImageFileName = "resource://{NativeAndForms.Resources.camera.svg}?assembly={Uri.EscapeUriString(NativeAndForms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null)}";
+            
+            ImageFileName = "resource://NativeAndForms.Resources.camera.svg";
+
+            // ...
+            // use for debugging, not in released app code!
+            //var assembly = IntrospectionExtensions.GetTypeInfo(typeof(HomeViewModel)).Assembly;
+            //foreach (var res in assembly.GetManifestResourceNames())
+            //{
+            //    System.Diagnostics.Debug.WriteLine("found resource: " + res);
+            //}
+
         }
 
         public string WelcomeTitle
@@ -46,6 +64,18 @@ namespace NativeAndForms.ViewModel
             }
         }
 
+        public string ImageFileName
+        {
+            get
+            {
+                return imageFileName;
+            }
+            set
+            {
+                Set(ref imageFileName, value);
+            }
+        }
+
         /// <summary>
         /// Gets the NavigateCommand.
         /// Goes to the second page, using the navigation service.
@@ -53,7 +83,7 @@ namespace NativeAndForms.ViewModel
         /// </summary>
         ///
 
-		public RelayCommand NavigateCommand
+        public RelayCommand NavigateCommand
 		{
 			get
 			{
