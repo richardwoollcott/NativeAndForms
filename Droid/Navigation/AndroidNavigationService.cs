@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Android.App;
 using Android.Content;
 using NativeAndForms.Navigation;
 using Plugin.CurrentActivity;
-using Xamarin.Forms;
-using Xamarin.Forms.Platform.Android;
 
 namespace NativeAndForms.Droid.Navigation
 {
@@ -33,8 +30,6 @@ namespace NativeAndForms.Droid.Navigation
 
         private readonly Dictionary<string, Type> _pagesByKey = new Dictionary<string, Type>();
         private readonly Dictionary<string, object> _parametersByKey = new Dictionary<string, object>();
-
-        private readonly Stack<FragmentOrActivity> navigationStack = new Stack<FragmentOrActivity>();
 
         /// <summary>
         /// The key corresponding to the currently displayed page.
@@ -66,18 +61,6 @@ namespace NativeAndForms.Droid.Navigation
                     _pagesByKey.Add(key, activityType);
                 }
             }
-        }
-
-        private Activity xamarinFormsHost;
-
-        public void Initialize(Activity startActivity)
-        {
-            xamarinFormsHost = startActivity;
-
-            navigationStack.Push(new FragmentOrActivity
-            {
-                IsActivity = true
-            });
         }
 
         /// <summary>
@@ -143,16 +126,7 @@ namespace NativeAndForms.Droid.Navigation
 
         private void GoBack()
         {
-            var popped = navigationStack.Pop();
-
-            if (popped.IsActivity)
-            {
-                CurrentView.Helper.GoBack();    
-            }
-            else
-            {
-                xamarinFormsHost.FragmentManager.PopBackStack();    
-            }
+            CurrentView.Helper.GoBack();
         }
 
         /// <summary>
@@ -210,16 +184,7 @@ namespace NativeAndForms.Droid.Navigation
 
                 var targetType = _pagesByKey[pageKey];
 
-                if (targetType.IsSubclassOf(typeof(ContentPage)))
-                {
-                    NavigateToActivity(MainPageKey, null);
-
-                    NavigateToFragment(pageKey, null);
-                }
-                else
-                {
-                    NavigateToActivity(pageKey, parameter);
-                }
+                NavigateToActivity(pageKey, parameter);
             }
         }
 
@@ -237,11 +202,13 @@ namespace NativeAndForms.Droid.Navigation
         /// a key that has not been configured earlier.</exception>
         public void NavigateToActivity(string pageKey, object parameter)
         {
+            /*
             if (CurrentView.Helper.ActivityKey == pageKey)
             {
                 // nothing todo we are aleady on that page
                 return;
             }
+            */
 
             if (CurrentView.Helper.CurrentActivity == null)
             {
@@ -264,40 +231,8 @@ namespace NativeAndForms.Droid.Navigation
 
                 CurrentView.Helper.CurrentActivity.StartActivity(intent);
 
-                navigationStack.Push(new FragmentOrActivity { IsActivity = true });
-
                 CurrentView.Helper.NextPageKey = pageKey;
             }
         }
-
-        public void NavigateToFragment(string pageKey, object parameter)
-        {
-            if (CurrentView.Helper.CurrentActivity == null)
-            {
-                throw new InvalidOperationException("No CurrentActivity found");
-            }
-
-            lock (_pagesByKey)
-            {
-                var page = (ContentPage)Activator.CreateInstance(_pagesByKey[pageKey]);
-                var targetFragment = page.CreateFragment(xamarinFormsHost);
-
-                xamarinFormsHost.FragmentManager
-                           .BeginTransaction()
-                           .AddToBackStack(null)
-                           .Replace(Resource.Id.fragment_frame_layout, targetFragment)
-                           .Commit();
-
-                navigationStack.Push(new FragmentOrActivity { IsActivity = false });
-                
-                CurrentView.Helper.NextPageKey = pageKey; //TODO check this
-            }
-        }
-
-        private class FragmentOrActivity
-        {
-            public bool IsActivity { get; set; }
-        }
-
     }
 }

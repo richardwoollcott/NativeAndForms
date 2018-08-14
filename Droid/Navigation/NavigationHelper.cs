@@ -14,6 +14,7 @@ namespace NativeAndForms.Droid.Navigation
 
         //public Activity CurrentActivity { get; set; }
 
+        //TODO review if we need this
         public string ActivityKey { get; set; }
 
         public string NextPageKey { get; set; }

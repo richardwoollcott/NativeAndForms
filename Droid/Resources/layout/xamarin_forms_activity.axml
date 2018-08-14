@@ -1,29 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
     <android.support.design.widget.AppBarLayout
-        android:id="@+id/nativepageappbar"
+        android:id="@+id/appbar"
         android:layout_width="match_parent"
         android:layout_height="?android:attr/actionBarSize"
         android:layout_gravity="top"
         app:elevation="0dp">
         <android.support.v7.widget.Toolbar
-            android:id="@+id/nativepagetoolbar"
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?android:attr/actionBarSize"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
     </android.support.design.widget.AppBarLayout>
-    <TextView
-        android:textAppearance="?android:attr/textAppearanceLarge"
+    <FrameLayout
+        android:id="@+id/activity_container_fragment"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/nativeTitle" />
-    <Button
-        android:text="Back"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/backButton" />
+        android:layout_height="match_parent" />
 </LinearLayout>

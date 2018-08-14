@@ -22,10 +22,9 @@ namespace NativeAndForms.ViewModel
     /// </summary>
     public class ViewModelLocator
     {
-		/// <summary>
-		/// The key used by the NavigationService to go to the second page.
-		/// </summary>
-		public const string DashboardPageKey = "DashboardPage";
+        public const string MainPageKey = "MainPage";
+
+        public const string DashboardPageKey = "DashboardPage";
 
         public const string HomePageKey = "HomePage";
 
@@ -36,9 +35,18 @@ namespace NativeAndForms.ViewModel
         /// </summary>
         public ViewModelLocator()
         {
+            SimpleIoc.Default.Register<MainViewModel>();
             SimpleIoc.Default.Register<HomeViewModel>();
             SimpleIoc.Default.Register<DashboardViewModel>();
             SimpleIoc.Default.Register<NativeViewModel>();
+        }
+
+        public MainViewModel Main
+        {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<MainViewModel>();
+            }
         }
 
         public HomeViewModel Home
