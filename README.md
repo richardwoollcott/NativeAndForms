@@ -68,6 +68,8 @@ https://blog.xamarin.com/unleashed-embedding-xamarin-forms-xamarin-native/
 
 https://docs.microsoft.com/en-us/xamarin/xamarin-forms/platform/native-forms
 
+https://montemagno.com/embedding-xamarinforms-into-a-xamarin-native-app/
+
 
 
 
