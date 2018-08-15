@@ -26,13 +26,19 @@ namespace NativeAndForms.Droid
                     var nav = new AndroidNavigationService();
                     SimpleIoc.Default.Register<IViewNavigationService>(() => nav);
 
-                    nav.Configure("Main", typeof(MainActivity));
+                    nav.Configure(ViewModelLocator.MainPageKey, typeof(MainActivity));
+
+                    nav.Configure(ViewModelLocator.HomePageKey, typeof(HomeActivity));
+
+                    nav.Configure(ViewModelLocator.DashboardPageKey, typeof(DashboardActivity));
 
                     nav.Configure(ViewModelLocator.NativePageKey, typeof(NativeActivity));
 
+                    /*
                     nav.Configure(ViewModelLocator.HomePageKey, typeof(HomePage));
 
                     nav.Configure(ViewModelLocator.DashboardPageKey, typeof(DashboardPage));
+                    */
 
 					locator = new ViewModelLocator();
 

@@ -150,12 +150,19 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DashboardViewController.cs" />
+    <Compile Include="HomeViewController.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Navigation\iOSNavigationService.cs" />
     <Compile Include="NativePageViewController.cs" />
     <Compile Include="NativePageViewController.designer.cs">
       <DependentUpon>NativePageViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XamarinFormsViewController.cs" />
+    <Compile Include="MainPageViewController.cs" />
+    <Compile Include="MainPageViewController.designer.cs">
+      <DependentUpon>MainPageViewController.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

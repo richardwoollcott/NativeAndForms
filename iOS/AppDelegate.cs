@@ -11,6 +11,7 @@ using NativeAndForms.Views;
 using NativeAndForms.Navigation;
 using FFImageLoading.Forms.Platform;
 using FFImageLoading.Svg.Forms;
+using System.Threading.Tasks;
 
 namespace NativeAndForms.iOS
 {
@@ -23,8 +24,7 @@ namespace NativeAndForms.iOS
         public static AppDelegate Instance;
 
         //UIWindow _window;
-        UINavigationController _navigation;
-
+        UINavigationController navigation;
 
         public override UIWindow Window
         {
@@ -32,6 +32,7 @@ namespace NativeAndForms.iOS
             set;
         }
 
+        /*
         UIViewController CreateHome(object parameter)
         {
             var homePage = new HomePage().CreateViewController();
@@ -47,17 +48,63 @@ namespace NativeAndForms.iOS
 
             return dashboardPage;
         }
+        */
+
+        UIViewController CreateHome(object parameter)
+        {
+            var homePage = new HomeViewController();
+            //homePage.Title = "Home";
+
+            return homePage;
+        }
+
+        UIViewController CreateDashboard(object parameter)
+        {
+            var dashboardPage = new DashboardViewController();
+            //dashboardPage.Title = "Dashboard";
+
+            return dashboardPage;
+        }
+
+        private void InitialiseForms()
+        {
+            if (!Xamarin.Forms.Forms.IsInitialized)
+            {
+                Task.Run(() =>
+                {
+                    /*
+                    Forms.Init();
+
+                    CachedImageRenderer.Init();
+
+                    var ignore = typeof(SvgCachedImage);
+                    */
+
+                    InvokeOnMainThread(() =>
+                    {
+                        Xamarin.Forms.Forms.Init();
+
+                        CachedImageRenderer.Init();
+                        var ignore = typeof(SvgCachedImage);
+                    });
+
+                });
+            }
+        }
 
         public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
         {
             // Override point for customization after application launch.
             // If not required for your application you can safely delete this method
 
+            /*
             Forms.Init();
 
             CachedImageRenderer.Init();
 
             var ignore = typeof(SvgCachedImage);
+            */
+            InitialiseForms();
 
             SimpleIoc.Default.Register<ViewModelLocator>(() => Application.Locator);
 
@@ -65,25 +112,37 @@ namespace NativeAndForms.iOS
             var nav = new iOSNavigationService();
             SimpleIoc.Default.Register<IViewNavigationService>(() => nav);
 
-            var mainPage = CreateHome(null);
-            mainPage.Title = "Native Forms";
+            //var mainPage = CreateHome(null);
 
-            _navigation = Window.RootViewController as UINavigationController;
+            /*
+            var storyboard = UIStoryboard.FromName("Main", null);
 
-            Window.RootViewController = _navigation;
+            if (storyboard != null)
+            {
+                var mainViewController = storyboard.InstantiateViewController("MainPage");
+                mainViewController.Title = "Native Forms";
+                navigation.PresentViewController(mainViewController, true, null);
+            }
+            */
+
+            navigation = Window.RootViewController as UINavigationController;
+
+            Window.RootViewController = navigation;
             Window.MakeKeyAndVisible();
 
             // MVVM Light's DispatcherHelper for cross-thread handling.
             DispatcherHelper.Initialize(application);
 
-            nav.Initialize(_navigation);
-            
+            nav.Initialize(navigation);
+
+            nav.Configure(ViewModelLocator.MainPageKey, "MainPage");
+
             nav.Configure(ViewModelLocator.NativePageKey, "NativePage");
                       
             nav.Configure(ViewModelLocator.HomePageKey, CreateHome);
             nav.Configure(ViewModelLocator.DashboardPageKey, CreateDashboard);
 
-            nav.NavigateToAsync(ViewModelLocator.HomePageKey);
+            nav.NavigateToAsync(ViewModelLocator.MainPageKey);
                              
             return true;
         }
