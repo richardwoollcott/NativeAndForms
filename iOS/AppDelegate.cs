@@ -72,21 +72,22 @@ namespace NativeAndForms.iOS
             {
                 Task.Run(() =>
                 {
+                    /*
                     Forms.Init();
 
                     CachedImageRenderer.Init();
 
                     var ignore = typeof(SvgCachedImage);
+                    */
 
-                    /*
-                    RunOnUiThread(() =>
+                    InvokeOnMainThread(() =>
                     {
-                        Xamarin.Forms.Forms.Init(this, savedInstanceState);
+                        Xamarin.Forms.Forms.Init();
 
-                        CachedImageRenderer.Init(true);
+                        CachedImageRenderer.Init();
                         var ignore = typeof(SvgCachedImage);
                     });
-                    */
+
                 });
             }
         }

@@ -160,6 +160,10 @@
       <DependentUpon>NativePageViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="XamarinFormsViewController.cs" />
+    <Compile Include="MainPageViewController.cs" />
+    <Compile Include="MainPageViewController.designer.cs">
+      <DependentUpon>MainPageViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NativeAndForms\NativeAndForms.csproj">

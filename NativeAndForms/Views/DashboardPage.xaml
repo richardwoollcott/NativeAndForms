@@ -20,7 +20,7 @@
             <Grid.Margin>
                 <OnPlatform
                     x:TypeArguments="Thickness"
-                    iOS="0,50,0,0"
+                    iOS="0,0,0,0"
                     Android="0,0,0,0" />
             </Grid.Margin>
             <Grid.RowDefinitions>

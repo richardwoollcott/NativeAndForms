@@ -38,7 +38,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="24" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1802" y="52"/>
+            <point key="canvasLocation" x="1983" y="635"/>
         </scene>
         <scene sceneID="1029">
             <objects>
@@ -51,6 +51,39 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1033" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1128" y="13"/>
+        </scene>
+        <scene sceneID="2227">
+            <objects>
+                <viewController id="2228" sceneMemberID="viewController" customClass="MainPageViewController" storyboardIdentifier="MainPage">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2225"/>
+                        <viewControllerLayoutGuide type="bottom" id="2226"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2229">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2234" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="40" y="112" width="334" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2235" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="172" y="159" width="70" height="30"/>
+                                <state key="normal" title="Login"/>
+                            </button>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="LoginTitle" destination="2234" id="name-outlet-2234"/>
+                        <outlet property="LoginButton" destination="2235" id="name-outlet-2235"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2230" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1987" y="-182"/>
         </scene>
     </scenes>
 </document>
