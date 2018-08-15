@@ -11,7 +11,7 @@ Things to note:-
 The MVVMLight framework is used as it is supported across both Xamarin native and Xamarin.Forms platforms.
 
 
-The NativeAndForms .Net standard library contains the two Xamarin.Forms pages (DashboardPage.xaml and HomePage.xaml) which are hosted in Native and Xamarin.Froms version of the app on both iOS and Android.
+The NativeAndForms .Net standard library contains the two Xamarin.Forms pages (DashboardPage.xaml and HomePage.xaml) which are hosted in Native and Xamarin.Forms version of the app on both iOS and Android.
 
 The ViewModels DashboardViewModel and HomeViewModel and the ViewModelLocator are used on all versions of the app without change.
 
@@ -20,8 +20,6 @@ The IViewNavigationService interface is used across all platforms with the follo
 Xamarin.Forms - ViewNavigationService - based on https://mallibone.com/post/a-simple-navigation-service-for-xamarinforms?mode=edit
 Android - AndroidNavigationService - based on MVVMLight and modified to handle Activity and Fragments. Further testing required on this
 iOS - iOSNavigationService - stock MVVMLight implementation
-
-Note the iOS and Android native applications cannot access the Application.Current.Resources
 
 An important note is that the Xamarin forms pages when hosted in an iOS native app resolve as UIViewControllers and so are equivalent to native pages.
 
@@ -45,6 +43,8 @@ You can use Merged Resource Dictionaries with Native forms so shared styles can 
 
 Placing of styles etc in App.xaml is unsupported on the Xamarin native platfroms so don't use this.
 
+The iOS and Android native applications cannot access the Application.Current.Resources of Xamarin.Forms. This caused a problem when initially trying to use the FFImageLoading library, it could also affect other third part libraries so is something to be aware of as a limitation of this approach.
+
 Custom Renderers work ok using Native Forms with the Renderers in a Shared Project (so they work in both types of app).
 
 The Xamarin.Forms ContentPages and ViewModels can be used with Native forms without modification if a cross platfrom framework is used such as MVVMLight.
@@ -56,8 +56,6 @@ I've implemented the second navigation approach of Page Wrappers with Android Ap
 A navigation service for iOS/Android/Xamarin.Forms is required using a common interface.
 
 The Fast and Furious Image Loading library was used to load images held in the .Net Standard library containing the Xamarin.Forms Views. The idea being that in order to use the Live Reload feature ony available in a Xamarin.Forms app to keep both Native Forms and Xamarin.Forms versions of the app running in parallel. By default images are kept in the actual app so we investigated avoiding duplication of the images in both versions of the app. Also the use of SVG images on both platforms was investigate using this library, the downside of this is that performance appeared to be a little slower than the use of images. The library provides many features such as placeholder and error images and caching of images to use the same bitmap and other image download features. The library SVG support worked out of the box in the Xamarin.Forms apps but not in the Native Forms apps. This looks to be beacuse of the use of the Xamarin.Forms Application resources which isn't supported in Native Forms. I've implemented a workaround, a proper resolution replacing the use of the Appplication resources could be worked out ok I think if required.
-
-Other libraries we may wish to use may also have the same problem with the Application object
 
 Notes
 Comment out the Grid Margin in the DashboardPage.xaml and HomePage.xaml files when running the Xamarin.Forms iOS app (JustForms.iOS) as the behaviour is different between the native and forms platforms with respect to the navigation bar.
