@@ -21,8 +21,6 @@ namespace NativeAndForms.Droid
 
         private readonly NavigationHelper navigationHelper = new NavigationHelper();
 
-        bool initialized;
-
         public NavigationHelper Helper
         {
             get
@@ -80,10 +78,8 @@ namespace NativeAndForms.Droid
 
         private void InitialiseForms()
         {
-            if (!initialized)
+            if (!Xamarin.Forms.Forms.IsInitialized)
             {
-                initialized = true;
-
                 Task.Run(() =>
                 {
                     Xamarin.Forms.Forms.Init(this, savedInstanceState);
@@ -121,14 +117,14 @@ namespace NativeAndForms.Droid
 
             // Binding and commanding
 
-            // Binding between the first UILabel and the WelcomeTitle property on the VM.
+            // Binding between the first UILabel and the LoginTitle property on the VM.
             // Keep track of the binding to avoid premature garbage collection
             bindings.Add(
                 this.SetBinding(
                     () => Vm.LoginTitle,
                     () => LoginTitle.Text));
 
-            // Actuate the NavigateCommand on the VM.
+            // Actuate the Command on the VM.
             LoginButton.SetCommand(
                 "Click",
                 Vm.LoginCommand);

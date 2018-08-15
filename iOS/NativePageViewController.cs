@@ -39,14 +39,14 @@ namespace NativeAndForms.iOS
 
             // Binding and commanding
 
-            // Binding between the first UILabel and the WelcomeTitle property on the VM.
+            // Binding between the first UILabel and the NativeTitle property on the VM.
             // Keep track of the binding to avoid premature garbage collection
             bindings.Add(
                 this.SetBinding(
                     () => Vm.NativeTitle,
                     () => NativeTitle.Text));
 
-            // Actuate the NavigateCommand on the VM.
+            // Actuate the Command on the VM.
             BackButton.SetCommand(
                 "TouchUpInside",
                 Vm.NavigateBackCommand);

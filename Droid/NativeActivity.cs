@@ -95,7 +95,7 @@ namespace NativeAndForms.Droid
 
             // Binding and commanding
 
-            // Binding between the first UILabel and the WelcomeTitle property on the VM.
+            // Binding between the first UILabel and the NativeTitle property on the VM.
             // Keep track of the binding to avoid premature garbage collection
             bindings.Add(
                 this.SetBinding(
@@ -107,7 +107,7 @@ namespace NativeAndForms.Droid
             //var nav = (AndroidNavigationService)SimpleIoc.Default.GetInstance<INavigationService>();
             //BackButton.Click += (s, e) => nav.GoBack();
 
-            // Actuate the NavigateCommand on the VM.
+            // Actuate the Command on the VM.
             BackButton.SetCommand(
                 "Click",
                 Vm.NavigateBackCommand);
