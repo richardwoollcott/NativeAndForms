@@ -37,6 +37,8 @@ Summary:-
 
 Xamarin.LiveReload works on the Xamarin.Forms apps only (JustForms.Droid & JustForms.iOS), not the native apps using Native Forms (NativeAndForms.Droid & NativeAndForms.iOS)
 
+The announcement blog post (https://blog.xamarin.com/unleashed-embedding-xamarin-forms-xamarin-native/) details what is supported, at thre time of this announcement the ContentPage type is supported. The other Xamarin.Forms page types are detailed here https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/controls/pages. Of those the TabbedPage would be required for the app. However we should be able to use the native controls on the platforms to host the Xamarin.Forms content pages or define the content of the pages natively. See https://docs.microsoft.com/en-us/xamarin/ios/user-interface/controls/creating-tabbed-applications (iOS) and https://blog.xamarin.com/exploring-androids-bottom-navigation-view/ (Android).
+
 Also Xamarin.LiveReload works on the PC Visual Studio 2017 only and is not yet available for the mac.
 
 You can use Merged Resource Dictionaries with Native forms so shared styles can be used.
