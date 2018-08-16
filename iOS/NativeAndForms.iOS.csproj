@@ -29,6 +29,7 @@
     <MtouchArch>x86_64</MtouchArch>
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
     <PlatformTarget>x86</PlatformTarget>
+    <MtouchExtraArgs>--framework:/Applications/Reveal.app/Contents/SharedSupport/iOS-Libraries/RevealServer.framework</MtouchExtraArgs>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>pdbonly</DebugType>
@@ -77,6 +78,7 @@
     <MtouchArch>ARM64</MtouchArch>
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
     <PlatformTarget>x86</PlatformTarget>
+    <MtouchExtraArgs>--framework:/Applications/Reveal.app/Contents/SharedSupport/iOS-Libraries/RevealServer.framework</MtouchExtraArgs>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="FFImageLoading, Version=2.4.3.840, Culture=neutral, processorArchitecture=MSIL">
@@ -136,9 +138,29 @@
     <ImageAsset Include="Assets.xcassets\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_action_audiotrack.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_action_audiotrack.imageset\ic_action_audiotrack.png" />
+    <ImageAsset Include="Assets.xcassets\ic_action_audiotrack.imageset\ic_action_audiotrack%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_action_audiotrack.imageset\ic_action_audiotrack%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_action_home.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_action_home.imageset\ic_action_home.png" />
+    <ImageAsset Include="Assets.xcassets\ic_action_home.imageset\ic_action_home%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_action_home.imageset\ic_action_home%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_action_videocam.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_action_videocam.imageset\ic_action_videocam.png" />
+    <ImageAsset Include="Assets.xcassets\ic_action_videocam.imageset\ic_action_videocam%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_action_videocam.imageset\ic_action_videocam%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_dashboard_background.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_dashboard_background.imageset\ic_dashboard_background.png" />
+    <ImageAsset Include="Assets.xcassets\ic_dashboard_background.imageset\ic_dashboard_background%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_dashboard_background.imageset\ic_dashboard_background%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
+    <Folder Include="Assets.xcassets\ic_action_audiotrack.imageset\" />
+    <Folder Include="Assets.xcassets\ic_action_home.imageset\" />
+    <Folder Include="Assets.xcassets\ic_action_videocam.imageset\" />
+    <Folder Include="Assets.xcassets\ic_dashboard_background.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -163,6 +185,22 @@
     <Compile Include="MainPageViewController.cs" />
     <Compile Include="MainPageViewController.designer.cs">
       <DependentUpon>MainPageViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TabPageViewController.cs" />
+    <Compile Include="TabPageViewController.designer.cs">
+      <DependentUpon>TabPageViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TabOneViewController.cs" />
+    <Compile Include="TabOneViewController.designer.cs">
+      <DependentUpon>TabOneViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TabTwoViewController.cs" />
+    <Compile Include="TabTwoViewController.designer.cs">
+      <DependentUpon>TabTwoViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TabThreeViewController.cs" />
+    <Compile Include="TabThreeViewController.designer.cs">
+      <DependentUpon>TabThreeViewController.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

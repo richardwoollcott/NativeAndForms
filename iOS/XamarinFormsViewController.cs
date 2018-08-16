@@ -79,9 +79,13 @@ namespace NativeAndForms.iOS
         {
             base.ViewDidLoad();
             _page = new TPage();
+
             var xamarinFormsController = _page.CreateViewController();
+
             AddChildViewController(xamarinFormsController);
+
             View.AddSubview(xamarinFormsController.View);
+                       
             xamarinFormsController.DidMoveToParentViewController(this);
 
             // add whatever other settings you want - ex:

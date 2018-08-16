@@ -24,11 +24,15 @@ namespace NativeAndForms.ViewModel
     {
         public const string MainPageKey = "MainPage";
 
+        public const string TabPageKey = "TabPage";
+
         public const string DashboardPageKey = "DashboardPage";
 
         public const string HomePageKey = "HomePage";
 
         public const string NativePageKey = "NativePage";
+
+        public const string TabOnePageKey = "TabOnePage";
 
         /// <summary>
         /// Initializes a new instance of the ViewModelLocator class.
@@ -39,6 +43,10 @@ namespace NativeAndForms.ViewModel
             SimpleIoc.Default.Register<HomeViewModel>();
             SimpleIoc.Default.Register<DashboardViewModel>();
             SimpleIoc.Default.Register<NativeViewModel>();
+            SimpleIoc.Default.Register<TabPageViewModel>();
+            SimpleIoc.Default.Register<TabOneViewModel>();
+            SimpleIoc.Default.Register<TabTwoViewModel>();
+            SimpleIoc.Default.Register<TabThreeViewModel>();
         }
 
         public MainViewModel Main
@@ -70,6 +78,38 @@ namespace NativeAndForms.ViewModel
             get
             {
                 return SimpleIoc.Default.GetInstance<NativeViewModel>();
+            }
+        }
+
+        public TabPageViewModel TabPage
+        {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<TabPageViewModel>();
+            }
+        }
+
+        public TabOneViewModel TabOne
+        {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<TabOneViewModel>();
+            }
+        }
+
+        public TabTwoViewModel TabTwo
+        {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<TabTwoViewModel>();
+            }
+        }
+
+        public TabThreeViewModel TabThree
+        {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<TabThreeViewModel>();
             }
         }
 

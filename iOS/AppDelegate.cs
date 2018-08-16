@@ -50,6 +50,7 @@ namespace NativeAndForms.iOS
         }
         */
 
+
         UIViewController CreateHome(object parameter)
         {
             var homePage = new HomeViewController();
@@ -58,6 +59,16 @@ namespace NativeAndForms.iOS
             return homePage;
         }
 
+        /*
+        UIViewController CreateHome(object parameter)
+        {
+            var homePage = new HomePage().CreateViewController();
+            homePage.Title = "Home";
+
+            return homePage;
+        }
+        */
+
         UIViewController CreateDashboard(object parameter)
         {
             var dashboardPage = new DashboardViewController();
@@ -65,6 +76,15 @@ namespace NativeAndForms.iOS
 
             return dashboardPage;
         }
+
+        UIViewController CreateTabOne(object parameter)
+        {
+            var tabOnePage = new TabOneViewController();
+            //dashboardPage.Title = "Dashboard";
+
+            return tabOnePage;
+        }
+
 
         private void InitialiseForms()
         {
@@ -104,6 +124,7 @@ namespace NativeAndForms.iOS
 
             var ignore = typeof(SvgCachedImage);
             */
+
             InitialiseForms();
 
             SimpleIoc.Default.Register<ViewModelLocator>(() => Application.Locator);
@@ -111,19 +132,6 @@ namespace NativeAndForms.iOS
             // Configure and register the MVVM Light NavigationService
             var nav = new iOSNavigationService();
             SimpleIoc.Default.Register<IViewNavigationService>(() => nav);
-
-            //var mainPage = CreateHome(null);
-
-            /*
-            var storyboard = UIStoryboard.FromName("Main", null);
-
-            if (storyboard != null)
-            {
-                var mainViewController = storyboard.InstantiateViewController("MainPage");
-                mainViewController.Title = "Native Forms";
-                navigation.PresentViewController(mainViewController, true, null);
-            }
-            */
 
             navigation = Window.RootViewController as UINavigationController;
 
@@ -137,13 +145,24 @@ namespace NativeAndForms.iOS
 
             nav.Configure(ViewModelLocator.MainPageKey, "MainPage");
 
+            nav.Configure(ViewModelLocator.TabPageKey, "TabPage");
+
             nav.Configure(ViewModelLocator.NativePageKey, "NativePage");
                       
+            nav.Configure(ViewModelLocator.TabOnePageKey, CreateTabOne);
+
             nav.Configure(ViewModelLocator.HomePageKey, CreateHome);
             nav.Configure(ViewModelLocator.DashboardPageKey, CreateDashboard);
 
             nav.NavigateToAsync(ViewModelLocator.MainPageKey);
-                             
+
+            /*  
+            Forms.Init();
+
+            var page = new TabOnePage().CreateViewController();
+            navigation.PushViewController(page, true);
+            */
+
             return true;
         }
        

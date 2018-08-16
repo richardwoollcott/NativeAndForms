@@ -85,5 +85,79 @@
             </objects>
             <point key="canvasLocation" x="1987" y="-182"/>
         </scene>
+        <scene sceneID="2451">
+            <objects>
+                <viewController id="2452" sceneMemberID="viewController" customClass="TabTwoViewController" storyboardIdentifier="TabTwo">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2447"/>
+                        <viewControllerLayoutGuide type="bottom" id="2448"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2453">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" id="2454" title="Tab2" image="ic_action_audiotrack"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2455" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3600" y="132"/>
+        </scene>
+        <scene sceneID="2456">
+            <objects>
+                <viewController id="2457" sceneMemberID="viewController" customClass="TabOneViewController" storyboardIdentifier="TabOne">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2449"/>
+                        <viewControllerLayoutGuide type="bottom" id="2450"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2458">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" id="2459" title="Tab1" image="ic_action_home"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2460" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3019" y="-406"/>
+        </scene>
+        <scene sceneID="2461">
+            <objects>
+                <tabBarController id="2462" sceneMemberID="viewController" customClass="TabPageViewController" storyboardIdentifier="TabPage">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="2465">
+                        <rect key="frame" x="0.0" y="687" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="2457" kind="relationship" relationship="viewControllers" id="2463"/>
+                        <segue destination="2452" kind="relationship" relationship="viewControllers" id="2464"/>
+                        <segue id="2784" destination="2682" kind="relationship" relationship="viewControllers"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2466" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2466" y="127"/>
+        </scene>
+        <scene sceneID="2681">
+            <objects>
+                <viewController id="2682" sceneMemberID="viewController" customClass="TabThreeViewController" storyboardIdentifier="TabThree">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2685"/>
+                        <viewControllerLayoutGuide type="bottom" id="2686"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2683">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" id="2684" title="Tab3" image="ic_action_videocam"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2687" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3034" y="596"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="ic_action_audiotrack" width="24" height="24"/>
+        <image name="ic_action_home" width="36" height="36"/>
+        <image name="ic_action_videocam" width="36" height="36"/>
+    </resources>
 </document>
