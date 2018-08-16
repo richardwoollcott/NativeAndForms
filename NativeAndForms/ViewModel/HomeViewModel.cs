@@ -89,7 +89,7 @@ namespace NativeAndForms.ViewModel
 			{
 				return navigateCommand
 					?? (navigateCommand = new RelayCommand(() => navigationService.NavigateToAsync(
-                        ViewModelLocator.DashboardPageKey)));
+                        ViewModelLocator.TabPageKey)));
 			}
 		}
 

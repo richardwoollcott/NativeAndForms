@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="NativeAndForms.Views.TabOnePage"
+             BackgroundColor="Transparent">
+   <Grid BackgroundColor="Maroon"
+              Padding="10,10"
+              HorizontalOptions="Fill"
+              VerticalOptions="Fill">
+        <Grid.Margin>
+                <OnPlatform
+                    x:TypeArguments="Thickness"
+                    iOS="0,50,0,0"
+                    Android="0,0,0,0" />
+        </Grid.Margin>
+        <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+            <Label Grid.Row="0"
+                   Margin="0,20,0,0"
+                   Text="Xamarin.Forms Content Page"
+                   FontSize="18"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   HorizontalTextAlignment="Center"/>
+            <Label Grid.Row="1"
+                   Text="{Binding TabTitle, Mode=OneWay}"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   TextColor="White"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   HorizontalTextAlignment="Center"/>
+        
+   </Grid>
+</ContentPage>

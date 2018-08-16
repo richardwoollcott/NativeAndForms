@@ -29,6 +29,8 @@ namespace NativeAndForms.iOS
         {
             base.ViewDidLoad();
 
+            View.BackgroundColor = UIColor.Brown;
+
             /*
             BackButton.TouchUpInside += (s, e) =>
             {

@@ -28,6 +28,8 @@ namespace NativeAndForms.Droid
 
                     nav.Configure(ViewModelLocator.MainPageKey, typeof(MainActivity));
 
+                    nav.Configure(ViewModelLocator.TabPageKey, typeof(TabPageActivity));
+
                     nav.Configure(ViewModelLocator.HomePageKey, typeof(HomeActivity));
 
                     nav.Configure(ViewModelLocator.DashboardPageKey, typeof(DashboardActivity));

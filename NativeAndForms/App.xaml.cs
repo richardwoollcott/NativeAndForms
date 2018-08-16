@@ -22,11 +22,15 @@ namespace NativeAndForms
 
             nav.Configure(ViewModelLocator.DashboardPageKey, typeof(DashboardPage));
 
+            //nav.Configure(ViewModelLocator.TabOnePageKey, typeof(TabOnePage));
+
             var locator = new ViewModelLocator();
 
             SimpleIoc.Default.Register<ViewModelLocator>(() => locator);
 
             var mainPage = nav.SetRootPage(ViewModelLocator.HomePageKey);
+
+            //var mainPage = nav.SetRootPage(ViewModelLocator.TabOnePageKey);
 
             MainPage = mainPage;
         }
