@@ -138,26 +138,66 @@
     <ImageAsset Include="Assets.xcassets\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_action_audiotrack.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\ic_action_audiotrack.imageset\ic_action_audiotrack.png" />
-    <ImageAsset Include="Assets.xcassets\ic_action_audiotrack.imageset\ic_action_audiotrack%402x.png" />
-    <ImageAsset Include="Assets.xcassets\ic_action_audiotrack.imageset\ic_action_audiotrack%403x.png" />
-    <ImageAsset Include="Assets.xcassets\ic_action_home.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\ic_action_home.imageset\ic_action_home.png" />
-    <ImageAsset Include="Assets.xcassets\ic_action_home.imageset\ic_action_home%402x.png" />
-    <ImageAsset Include="Assets.xcassets\ic_action_home.imageset\ic_action_home%403x.png" />
-    <ImageAsset Include="Assets.xcassets\ic_action_videocam.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\ic_action_videocam.imageset\ic_action_videocam.png" />
-    <ImageAsset Include="Assets.xcassets\ic_action_videocam.imageset\ic_action_videocam%402x.png" />
-    <ImageAsset Include="Assets.xcassets\ic_action_videocam.imageset\ic_action_videocam%403x.png" />
-    <ImageAsset Include="Assets.xcassets\ic_dashboard_background.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\ic_dashboard_background.imageset\ic_dashboard_background.png" />
-    <ImageAsset Include="Assets.xcassets\ic_dashboard_background.imageset\ic_dashboard_background%402x.png" />
-    <ImageAsset Include="Assets.xcassets\ic_dashboard_background.imageset\ic_dashboard_background%403x.png" />
-    <ImageAsset Include="Assets.xcassets\sse_logo.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\sse_logo.imageset\logosMonochrome.png" />
-    <ImageAsset Include="Assets.xcassets\sse_logo.imageset\logosMonochrome%402x.png" />
-    <ImageAsset Include="Assets.xcassets\sse_logo.imageset\logosMonochrome%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_action_audiotrack.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_action_audiotrack.imageset\ic_action_audiotrack.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_action_audiotrack.imageset\ic_action_audiotrack%402x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_action_audiotrack.imageset\ic_action_audiotrack%403x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_action_home.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_action_home.imageset\ic_action_home.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_action_home.imageset\ic_action_home%402x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_action_home.imageset\ic_action_home%403x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_action_videocam.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_action_videocam.imageset\ic_action_videocam.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_action_videocam.imageset\ic_action_videocam%402x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_action_videocam.imageset\ic_action_videocam%403x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_dashboard_background.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_dashboard_background.imageset\ic_dashboard_background.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_dashboard_background.imageset\ic_dashboard_background%402x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_dashboard_background.imageset\ic_dashboard_background%403x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\sse_logo.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\sse_logo.imageset\logosMonochrome.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\sse_logo.imageset\logosMonochrome%402x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\sse_logo.imageset\logosMonochrome%403x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
