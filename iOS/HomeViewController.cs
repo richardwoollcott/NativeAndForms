@@ -22,7 +22,7 @@ namespace NativeAndForms.iOS
         {
             base.ViewDidLoad();
 
-            NavigationItem.Title = "Home page";
+            //NavigationItem.Title = "Home page";
         }
     }
 }

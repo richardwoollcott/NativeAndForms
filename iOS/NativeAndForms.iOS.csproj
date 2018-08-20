@@ -154,6 +154,10 @@
     <ImageAsset Include="Assets.xcassets\ic_dashboard_background.imageset\ic_dashboard_background.png" />
     <ImageAsset Include="Assets.xcassets\ic_dashboard_background.imageset\ic_dashboard_background%402x.png" />
     <ImageAsset Include="Assets.xcassets\ic_dashboard_background.imageset\ic_dashboard_background%403x.png" />
+    <ImageAsset Include="Assets.xcassets\sse_logo.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\sse_logo.imageset\logosMonochrome.png" />
+    <ImageAsset Include="Assets.xcassets\sse_logo.imageset\logosMonochrome%402x.png" />
+    <ImageAsset Include="Assets.xcassets\sse_logo.imageset\logosMonochrome%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
@@ -161,6 +165,7 @@
     <Folder Include="Assets.xcassets\ic_action_home.imageset\" />
     <Folder Include="Assets.xcassets\ic_action_videocam.imageset\" />
     <Folder Include="Assets.xcassets\ic_dashboard_background.imageset\" />
+    <Folder Include="Assets.xcassets\sse_logo.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />

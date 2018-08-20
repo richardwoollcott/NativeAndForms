@@ -20,6 +20,7 @@ namespace NativeAndForms.iOS
             var vm = Vm;
         }
 
+        /*
         public override void ViewDidLoad()
         {
             var image = UIImage.FromBundle("ic_dashboard_background");
@@ -28,5 +29,6 @@ namespace NativeAndForms.iOS
 
             base.ViewDidLoad();
         }
+        */
     }
 }
