@@ -9,7 +9,7 @@
               HorizontalOptions="Fill"
               VerticalOptions="Fill">
         <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
+                <!--<RowDefinition Height="Auto"/>-->
                 <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.Margin>
@@ -22,22 +22,52 @@
                Grid.RowSpan="2"
                Source="ic_dashboard_background"
                Aspect="AspectFill"/>
-            <Label Grid.Row="0"
+            <!--<Label Grid.Row="0"
                    Margin="0,20,0,0"
                    Text="Xamarin.Forms Content Page"
                    FontSize="18"
                    FontAttributes="Bold"
                    HorizontalOptions="Center"
                    VerticalOptions="Center"
-                   HorizontalTextAlignment="Center"/>
-            <Label Grid.Row="1"
+                   HorizontalTextAlignment="Center"/>-->
+        <ListView VerticalOptions="FillAndExpand"
+                  BackgroundColor="Transparent">
+                  <ListView.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>mono</x:String>
+                            <x:String>monodroid</x:String>
+                            <x:String>monotouch</x:String>
+                            <x:String>monorail</x:String>
+                            <x:String>monodevelop</x:String>
+                            <x:String>monotone</x:String>
+                            <x:String>monopoly</x:String>
+                            <x:String>monomodal</x:String>
+                            <x:String>mononucleosis</x:String>
+                            <x:String>iphone</x:String>
+                            <x:String>android</x:String>
+                            <x:String>uwp</x:String>
+                            <x:String>tech</x:String>
+                            <x:String>forms</x:String>
+                            <x:String>content</x:String>
+                            <x:String>native</x:String>
+                            <x:String>abstraction</x:String>
+                            <x:String>shared</x:String>
+                            <x:String>views</x:String>
+                            <x:String>viewmodels</x:String>
+                            <x:String>mix and match</x:String>
+                            <x:String>have your cake and eat it</x:String>
+                            <x:String>lalaalala</x:String>
+                        </x:Array>
+                    </ListView.ItemsSource>
+            </ListView>
+            <!--<Label Grid.Row="1"
                    Text="{Binding TabTitle, Mode=OneWay}"
                    FontSize="24"
                    FontAttributes="Bold"
                    TextColor="White"
                    HorizontalOptions="Center"
                    VerticalOptions="Center"
-                   HorizontalTextAlignment="Center"/>
+                   HorizontalTextAlignment="Center"/>-->
         
    </Grid>
 </ContentPage>

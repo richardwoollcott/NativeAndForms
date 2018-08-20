@@ -12,6 +12,7 @@ using NativeAndForms.Navigation;
 using FFImageLoading.Forms.Platform;
 using FFImageLoading.Svg.Forms;
 using System.Threading.Tasks;
+using CoreGraphics;
 
 namespace NativeAndForms.iOS
 {
@@ -135,10 +136,16 @@ namespace NativeAndForms.iOS
 
             navigation = Window.RootViewController as UINavigationController;
 
-            UINavigationBar.Appearance.SetBackgroundImage(new UIImage(), UIBarMetrics.Default);
+            var image = UIImage.FromBundle("ic_dashboard_background");
+            UINavigationBar.Appearance.SetBackgroundImage(image, UIBarMetrics.Default);
             UINavigationBar.Appearance.ShadowImage = new UIImage();
             UINavigationBar.Appearance.BackgroundColor = UIColor.Clear;
             UINavigationBar.Appearance.Translucent = true;
+
+
+            var logoImageView = new UIImageView(UIImage.FromBundle("sse_logo"));
+            logoImageView.Frame = new CGRect((navigation.View.Bounds.Width / 2) - 40, 0, 80, 38);
+            navigation.NavigationBar.AddSubview(logoImageView);
 
             Window.RootViewController = navigation;
             Window.MakeKeyAndVisible();
