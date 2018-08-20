@@ -3,7 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:renderers="clr-namespace:NativeAndForms.Renderers;assembly=NativeAndForms"
              xmlns:views="clr-namespace:NativeAndForms.Views;assembly=NativeAndForms"
-             
              xmlns:app="clr-namespace:NativeAndForms;assembly=NativeAndForms"
              xmlns:forms="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
              xmlns:extensions="clr-namespace:NativeAndForms.Extensions"
@@ -11,7 +10,10 @@
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
              x:Class="NativeAndForms.Views.HomePage"
-             Title="Home">
+             Title="Home"
+             Padding="0"
+             >
+    <!--BackgroundImage="ic_dashboard_background"-->
  <ContentPage.Resources>
         <ResourceDictionary>
             <!--Page Level Resources: Compatibile with Xamarin Live Player -->
@@ -34,13 +36,13 @@
 
     <ContentPage.Content>
         <Grid BackgroundColor="{StaticResource Accent}"
-              Padding="10,10"
+              Padding="0,0"
               HorizontalOptions="Fill"
               VerticalOptions="Fill">
             <Grid.Margin>
                 <OnPlatform
                     x:TypeArguments="Thickness"
-                    iOS="0,0,0,0"
+                    iOS="0,60,0,0"
                     Android="0,0,0,0" />
             </Grid.Margin>
             <Grid.RowDefinitions>
@@ -50,6 +52,12 @@
                 <RowDefinition Height="65"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
+            <Image Grid.Row="0"
+                   Grid.RowSpan="5"
+                   HorizontalOptions="Fill"
+                   VerticalOptions="Fill"
+                   Source="ic_dashboard_background"
+                   Aspect="AspectFill"/>
             <Label Grid.Row="0"
                    Margin="0,20,0,0"
                    Text="Xamarin.Forms Content Page"

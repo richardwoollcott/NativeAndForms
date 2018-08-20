@@ -78,6 +78,11 @@ namespace NativeAndForms.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+
+            //var image = UIImage.FromBundle("ic_dashboard_background");
+
+            //View.BackgroundColor = UIColor.FromPatternImage(image);
+
             _page = new TPage();
 
             var xamarinFormsController = _page.CreateViewController();
@@ -88,9 +93,11 @@ namespace NativeAndForms.iOS
                        
             xamarinFormsController.DidMoveToParentViewController(this);
 
-            // add whatever other settings you want - ex:
-            EdgesForExtendedLayout = UIKit.UIRectEdge.None;
+            // add whatever other settings you want - ex
+            EdgesForExtendedLayout = UIKit.UIRectEdge.All;
             ExtendedLayoutIncludesOpaqueBars = false;
+            //ExtendedLayoutIncludesOpaqueBars = true;
+                
             AutomaticallyAdjustsScrollViewInsets = false;
 
         }

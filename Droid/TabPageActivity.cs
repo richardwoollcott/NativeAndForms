@@ -18,6 +18,8 @@ namespace NativeAndForms.Droid
 
             base.OnCreate(bundle);
             SetContentView(Resource.Layout.TabPage);
+
+
             var toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.tabpagetoolbar);
             if (toolbar != null)
             {
@@ -31,6 +33,8 @@ namespace NativeAndForms.Droid
 
 
             bottomNavigation.NavigationItemSelected += BottomNavigation_NavigationItemSelected;
+
+            SupportActionBar.Title = "Tabbed Page";
 
             LoadFragment(Resource.Id.menu_home);
         }

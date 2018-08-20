@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="NativeAndForms.Views.TabOnePage"
-             BackgroundColor="Transparent">
-   <Grid BackgroundColor="Maroon"
-              Padding="10,10"
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NativeAndForms.Views.TabOnePage"
+             Padding="0"
+             >
+    <!--BackgroundImage="ic_dashboard_background"-->
+   <Grid BackgroundColor="#96d1ff"
+              Padding="0,0"
               HorizontalOptions="Fill"
               VerticalOptions="Fill">
         <Grid.Margin>
@@ -15,6 +19,10 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+        <Image Grid.Row="0"
+               Grid.RowSpan="2"
+               Source="ic_dashboard_background"
+               Aspect="AspectFill"/>
             <Label Grid.Row="0"
                    Margin="0,20,0,0"
                    Text="Xamarin.Forms Content Page"
