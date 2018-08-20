@@ -135,6 +135,11 @@ namespace NativeAndForms.iOS
 
             navigation = Window.RootViewController as UINavigationController;
 
+            UINavigationBar.Appearance.SetBackgroundImage(new UIImage(), UIBarMetrics.Default);
+            UINavigationBar.Appearance.ShadowImage = new UIImage();
+            UINavigationBar.Appearance.BackgroundColor = UIColor.Clear;
+            UINavigationBar.Appearance.Translucent = true;
+
             Window.RootViewController = navigation;
             Window.MakeKeyAndVisible();
 

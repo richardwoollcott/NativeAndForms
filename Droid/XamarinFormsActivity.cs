@@ -72,9 +72,11 @@ namespace NativeAndForms.Droid
             var transaction = SupportFragmentManager.BeginTransaction();
             transaction.Add(Resource.Id.activity_container_fragment, _page.CreateSupportFragment(this));
             transaction.Commit();
+
             SupportActionBar?.SetDisplayHomeAsUpEnabled(true);
             SupportActionBar?.SetDisplayShowHomeEnabled(true);
-            Toolbar?.SetBackgroundColor(Android.Graphics.Color.White);
+            //Toolbar?.SetBackgroundColor(Android.Graphics.Color.White);
+            Toolbar?.SetBackgroundColor(Android.Graphics.Color.Transparent);
             // everything else from this point should be managed by the Xamarin.Forms page behind the fragment
 
             navigationService = SimpleIoc.Default.GetInstance<IViewNavigationService>();
